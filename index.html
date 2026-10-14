@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="th" class="dark" data-theme="cyberpunk" data-font="prompt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PORTFOLIO - Supawee</title>
+
+ <!-- Google Fonts: Prompt & Kanit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./profile.jpg" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              primary: 'var(--color-primary)',
+              secondary: 'var(--color-secondary)',
+              accent: 'var(--color-accent)',
+              bg: 'var(--color-bg)',
+              card: 'var(--color-card)',
+              text: 'var(--color-text)',
+              muted: 'var(--color-muted)',
+              border: 'var(--color-border)',
+            }
+          },
+          fontFamily: {
+            prompt: ['Prompt', 'sans-serif'],
+            kanit: ['Kanit', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-sm': '0 0 15px var(--color-glow)',
+            'glow-md': '0 0 25px var(--color-glow)',
+            'glow-lg': '0 0 40px var(--color-glow)',
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'spin-slow': 'spin 12s linear infinite',
+            'gradient': 'gradient 8s ease infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+            gradient: {
+              '0%, 100%': { 'background-position': '0% 50%' },
+              '50%': { 'background-position': '100% 50%' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Theme Color Variables Definition */
+    [data-theme="cyberpunk"] {
+      --color-primary: #00f0ff;
+      --color-secondary: #ff007f;
+      --color-accent: #7000ff;
+      --color-bg: #090514;
+      --color-card: rgba(22, 14, 43, 0.7);
+      --color-card-border: rgba(0, 240, 255, 0.2);
+      --color-text: #f1f5f9;
+      --color-muted: #94a3b8;
+      --color-border: rgba(255, 255, 255, 0.1);
+      --color-glow: rgba(0, 240, 255, 0.35);
+      --gradient-accent: linear-gradient(135deg, #00f0ff 0%, #ff007f 100%);
+    }
+
+    [data-theme="sunset"] {
+      --color-primary: #ff6b4a;
+      --color-secondary: #ffb703;
+      --color-accent: #fb8500;
+      --color-bg: #1c0e0b;
+      --color-card: rgba(43, 21, 17, 0.7);
+      --color-card-border: rgba(255, 107, 74, 0.25);
+      --color-text: #fdf8f6;
+      --color-muted: #a89a95;
+      --color-border: rgba(255, 255, 255, 0.1);
+      --color-glow: rgba(255, 107, 74, 0.35);
+      --gradient-accent: linear-gradient(135deg, #ff6b4a 0%, #ffb703 100%);
+    }
+
+    [data-theme="emerald"] {
+      --color-primary: #10b981;
+      --color-secondary: #06b6d4;
+      --color-accent: #34d399;
+      --color-bg: #061813;
+      --color-card: rgba(13, 41, 33, 0.7);
+      --color-card-border: rgba(16, 185, 129, 0.25);
+      --color-text: #f0fdf4;
+      --color-muted: #86efac;
+      --color-border: rgba(255, 255, 255, 0.1);
+      --color-glow: rgba(16, 185, 129, 0.35);
+      --gradient-accent: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+    }
+
+    [data-theme="ocean"] {
+      --color-primary: #3b82f6;
+      --color-secondary: #06b6d4;
+      --color-accent: #6366f1;
+      --color-bg: #070e20;
+      --color-card: rgba(17, 28, 56, 0.7);
+      --color-card-border: rgba(59, 130, 246, 0.25);
+      --color-text: #f0f7ff;
+      --color-muted: #93c5fd;
+      --color-border: rgba(255, 255, 255, 0.1);
+      --color-glow: rgba(59, 130, 246, 0.35);
+      --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    }
+
+    [data-theme="rose"] {
+      --color-primary: #f43f5e;
+      --color-secondary: #d946ef;
+      --color-accent: #fb7185;
+      --color-bg: #1a0a13;
+      --color-card: rgba(46, 18, 35, 0.7);
+      --color-card-border: rgba(244, 63, 94, 0.25);
+      --color-text: #fff1f2;
+      --color-muted: #f472b6;
+      --color-border: rgba(255, 255, 255, 0.1);
+      --color-glow: rgba(244, 63, 94, 0.35);
+      --gradient-accent: linear-gradient(135deg, #f43f5e 0%, #d946ef 100%);
+    }
+
+    [data-theme="obsidian"] {
+      --color-primary: #eab308;
+      --color-secondary: #f97316;
+      --color-accent: #fbbf24;
+      --color-bg: #0b0f17;
+      --color-card: rgba(23, 30, 44, 0.7);
+      --color-card-border: rgba(234, 179, 8, 0.25);
+      --color-text: #f8fafc;
+      --color-muted: #cbd5e1;
+      --color-border: rgba(255, 255, 255, 0.1);
+      --color-glow: rgba(234, 179, 8, 0.3);
+      --gradient-accent: linear-gradient(135deg, #eab308 0%, #f97316 100%);
+    }
+
+    /* Light Mode Adjustments */
+    html.light[data-theme="cyberpunk"] {
+      --color-bg: #f5f3ff;
+      --color-card: rgba(255, 255, 255, 0.85);
+      --color-card-border: rgba(112, 0, 255, 0.2);
+      --color-text: #0f172a;
+      --color-muted: #64748b;
+      --color-border: rgba(0, 0, 0, 0.08);
+      --color-glow: rgba(112, 0, 255, 0.15);
+    }
+    html.light[data-theme="sunset"] {
+      --color-bg: #fff8f6;
+      --color-card: rgba(255, 255, 255, 0.88);
+      --color-card-border: rgba(255, 107, 74, 0.2);
+      --color-text: #27140e;
+      --color-muted: #78645e;
+      --color-border: rgba(0, 0, 0, 0.08);
+      --color-glow: rgba(255, 107, 74, 0.15);
+    }
+    html.light[data-theme="emerald"] {
+      --color-bg: #f0fdf4;
+      --color-card: rgba(255, 255, 255, 0.88);
+      --color-card-border: rgba(16, 185, 129, 0.2);
+      --color-text: #062c22;
+      --color-muted: #4b7a6e;
+      --color-border: rgba(0, 0, 0, 0.08);
+      --color-glow: rgba(16, 185, 129, 0.15);
+    }
+    html.light[data-theme="ocean"] {
+      --color-bg: #f0f7ff;
+      --color-card: rgba(255, 255, 255, 0.88);
+      --color-card-border: rgba(59, 130, 246, 0.2);
+      --color-text: #0a192f;
+      --color-muted: #475569;
+      --color-border: rgba(0, 0, 0, 0.08);
+      --color-glow: rgba(59, 130, 246, 0.15);
+    }
+    html.light[data-theme="rose"] {
+      --color-bg: #fff1f2;
+      --color-card: rgba(255, 255, 255, 0.88);
+      --color-card-border: rgba(244, 63, 94, 0.2);
+      --color-text: #2a0818;
+      --color-muted: #884a6a;
+      --color-border: rgba(0, 0, 0, 0.08);
+      --color-glow: rgba(244, 63, 94, 0.15);
+    }
+    html.light[data-theme="obsidian"] {
+      --color-bg: #f8fafc;
+      --color-card: rgba(255, 255, 255, 0.88);
+      --color-card-border: rgba(234, 179, 8, 0.25);
+      --color-text: #0f172a;
+      --color-muted: #475569;
+      --color-border: rgba(0, 0, 0, 0.08);
+      --color-glow: rgba(234, 179, 8, 0.15);
+    }
+
+    [data-font="prompt"] { font-family: 'Prompt', sans-serif; }
+    [data-font="kanit"] { font-family: 'Kanit', sans-serif; }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
+    }
+
+    .glass-panel {
+      background: var(--color-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--color-card-border);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .glass-panel:hover {
+      box-shadow: 0 12px 40px 0 var(--color-glow);
+    }
+
+    .glass-nav {
+      background: var(--color-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--color-card-border);
+    }
+
+    .text-gradient {
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--color-bg);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-card-border);
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-primary);
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 0;
+      transition: all 0.8s ease;
+    }
+
+    .hide-ambient .blob {
+      display: none !important;
+    }
+
+    ::selection {
+      background: var(--color-primary);
+      color: #000;
+    }
+    
+  </style>
+</head>
+<body class="min-h-screen relative font-prompt">
+
+  <!-- Ambient Animated Background Glows -->
+  <div id="ambientContainer" class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="blob w-96 h-96 top-[-10%] left-[-10%] animate-pulse-slow" style="background-color: var(--color-primary);"></div>
+    <div class="blob w-[30rem] h-[30rem] top-[40%] right-[-10%] animate-float" style="background-color: var(--color-secondary);"></div>
+    <div class="blob w-80 h-80 bottom-[-10%] left-[20%] animate-pulse-slow" style="background-color: var(--color-accent);"></div>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo / Name -->
+        <a href="#hero" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-xl text-black shadow-glow-sm transition-transform duration-300 group-hover:scale-110" style="background: var(--gradient-accent)">
+            S
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-lg tracking-wide group-hover:text-brand-primary transition-colors">
+              Supawee <span class="text-gradient">.DEV</span>
+            </span>
+            <span class="text-xs text-brand-muted font-light">Full-Stack Developer</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+          <a href="#hero" class="nav-link px-3 py-2 rounded-lg text-sm font-medium hover:text-brand-primary transition-all duration-200">หน้าแรก</a>
+          <a href="#about" class="nav-link px-3 py-2 rounded-lg text-sm font-medium hover:text-brand-primary transition-all duration-200">เกี่ยวกับฉัน</a>
+          <a href="#skills" class="nav-link px-3 py-2 rounded-lg text-sm font-medium hover:text-brand-primary transition-all duration-200">ทักษะ</a>
+          <a href="#projects" class="nav-link px-3 py-2 rounded-lg text-sm font-medium hover:text-brand-primary transition-all duration-200">ผลงาน</a>
+          <a href="#experience" class="nav-link px-3 py-2 rounded-lg text-sm font-medium hover:text-brand-primary transition-all duration-200">ประสบการณ์</a>
+          <a href="#contact" class="nav-link px-3 py-2 rounded-lg text-sm font-medium hover:text-brand-primary transition-all duration-200">ติดต่อ</a>
+        </nav>
+
+
+
+
+
+        
+
+        <!-- Right Quick Actions -->
+        <div class="flex items-center gap-3">
+          <!-- Theme Preset Quick Selector -->
+          <div class="relative hidden sm:block">
+            <button id="quickThemeBtn" class="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium glass-panel border hover:border-brand-primary transition-all" title="เปลี่ยนธีมด่วน">
+              <span class="w-3 h-3 rounded-full" style="background: var(--gradient-accent)"></span>
+              <span id="quickThemeName">Cyberpunk</span>
+              <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
+            </button>
+            <div id="quickThemeDropdown" class="hidden absolute right-0 mt-2 w-48 rounded-xl glass-panel p-2 shadow-2xl border border-brand-border z-50">
+              <button data-theme-set="cyberpunk" class="theme-select-btn w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium hover:bg-white/10 transition-all">
+                <span class="w-3.5 h-3.5 rounded-full bg-cyan-400"></span> Cyberpunk
+              </button>
+              <button data-theme-set="sunset" class="theme-select-btn w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium hover:bg-white/10 transition-all">
+                <span class="w-3.5 h-3.5 rounded-full bg-orange-500"></span> Sunset Gold
+              </button>
+              <button data-theme-set="emerald" class="theme-select-btn w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium hover:bg-white/10 transition-all">
+                <span class="w-3.5 h-3.5 rounded-full bg-emerald-400"></span> Emerald Mint
+              </button>
+              <button data-theme-set="ocean" class="theme-select-btn w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium hover:bg-white/10 transition-all">
+                <span class="w-3.5 h-3.5 rounded-full bg-blue-500"></span> Ocean Breeze
+              </button>
+              <button data-theme-set="rose" class="theme-select-btn w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium hover:bg-white/10 transition-all">
+                <span class="w-3.5 h-3.5 rounded-full bg-rose-500"></span> Rose Quartz
+              </button>
+              <button data-theme-set="obsidian" class="theme-select-btn w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium hover:bg-white/10 transition-all">
+                <span class="w-3.5 h-3.5 rounded-full bg-yellow-500"></span> Obsidian
+              </button>
+            </div>
+          </div>
+
+          <!-- Open Customizer Drawer Button -->
+          <button id="openCustomizerBtn" class="p-2.5 rounded-xl glass-panel text-brand-text hover:text-brand-primary hover:scale-105 active:scale-95 transition-all shadow-glow-sm" title="ปรับแต่งธีมระดับสูง">
+            <i class="fa-solid fa-palette text-lg"></i>
+          </button>
+
+          <!-- Mobile Menu Toggle Button -->
+          <button id="mobileMenuBtn" class="md:hidden p-2.5 rounded-xl glass-panel text-brand-text hover:text-brand-primary transition-all">
+            <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden glass-panel border-t border-brand-border px-4 pt-3 pb-6 space-y-2 animate-fadeIn">
+      <a href="#hero" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium hover:bg-white/10 transition-all">หน้าแรก</a>
+      <a href="#about" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium hover:bg-white/10 transition-all">เกี่ยวกับฉัน</a>
+      <a href="#skills" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium hover:bg-white/10 transition-all">ทักษะ</a>
+      <a href="#projects" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium hover:bg-white/10 transition-all">ผลงาน</a>
+      <a href="#experience" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium hover:bg-white/10 transition-all">ประสบการณ์</a>
+      <a href="#contact" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium hover:bg-white/10 transition-all">ติดต่อ</a>
+    </div>
+  </header>
+
+  <main class="pt-20">
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-[calc(100vh-5rem)] flex items-center justify-center relative py-12 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden z-10">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text Content -->
+        <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+          
+          <!-- Status Badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border text-xs sm:text-sm font-medium tracking-wide">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+            </span>
+            <span style="color: var(--color-primary)">พร้อมรับงานใหม่ / Available for Projects</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+            Hi 👋 I'm <br class="hidden sm:inline"/>
+            <span class="text-gradient">Supawee Srabua</span>
+          </h1>
+
+          <!-- Dynamic Typing Text -->
+          <div class="text-xl sm:text-2xl lg:text-3xl font-medium text-brand-muted flex items-center h-10 gap-2">
+            <span>เป็น</span>
+            <span id="typewriter" class="font-semibold text-brand-text border-r-2 pr-1 animate-pulse" style="border-color: var(--color-primary)"></span>
+          </div>
+
+          <!-- Elevator Pitch -->
+          <p class="text-base sm:text-lg text-brand-muted max-w-2xl leading-relaxed">
+            Interested in Information Technology (IT) and software development, with foundational knowledge of programming, database management, SQL, and software development principles. Able to analyze problems, manage data, and develop solutions that meet technical requirements. Eager to enhance technical skills, gain hands-on experience, and contribute to IT projects while pursuing professional growth in the technology field.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 w-full sm:w-auto">
+            <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl font-semibold text-black shadow-glow-md transition-all duration-300 hover:scale-105 active:scale-95" style="background: var(--gradient-accent)">
+              <i class="fa-solid fa-paper-plane"></i> ติดต่อพูดคุย
+            </a>
+            <a href="#projects" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl font-semibold glass-panel border hover:border-brand-primary transition-all duration-300 hover:scale-105 active:scale-95">
+              <i class="fa-solid fa-laptop-code"></i> ชมผลงานทั้งหมด
+            </a>
+          </div>
+
+        </div>
+
+<!-- กรอบรูปโปรไฟล์ -->
+<div class="relative w-72 h-96 mx-auto flex items-center justify-center">
+
+  <!-- 1. แสงเรืองแสงฟุ้งๆ ด้านหลัง (Glow Effect) -->
+  <div class="absolute inset-0 bg-gradient-to-tr from-pink-400 via-purple-400 to-cyan-400 rounded-3xl blur-2xl opacity-60"></div>
+
+  <!-- 2. ตัวกรอบสีขาว Glassmorphism -->
+  <div class="relative w-full h-full bg-white/90 backdrop-blur-md p-3 rounded-3xl border border-white/80 shadow-lg flex flex-col justify-between">
+    
+    <!-- 3. พื้นที่ใส่รูปภาพจริง -->
+    <div class="w-full h-[82%] rounded-2xl overflow-hidden bg-slate-100">
+      <!-- 📌 ใส่ชื่อไฟล์รูปภาพตรง src นี้ -->
+      <img 
+        src="profile.jpg" 
+        alt="Profile" 
+        class="w-full h-full object-cover object-top"
+      />
+    </div>
+
+    <!-- 4. ป้ายกำกับด้านล่าง -->
+    <div class="w-full bg-slate-50/90 border border-slate-200/80 rounded-xl px-3 py-2 flex items-center justify-between text-[11px] font-mono">
+      <div class="flex items-center gap-1.5 text-emerald-500 font-semibold">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Clean Code
+      </div>
+      <div class="text-slate-500 font-medium">
+        PHP + JS + MySQL
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+    <!-- 3. ป้ายข้อความด้านล่าง (Clean Code) -->
+    <div class="w-full bg-slate-50/90 border border-slate-200/80 rounded-xl px-3 py-2 flex items-center justify-between text-[11px] font-mono">
+      <div class="flex items-center gap-1.5 text-emerald-500 font-semibold">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Clean Code
+      </div>
+      <div class="text-slate-500 font-medium">
+        PHP + JS + MySQL
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <!-- Section Title -->
+        <div class="text-center space-y-3">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider glass-panel border" style="color: var(--color-primary)">
+            ข้อมูลส่วนตัว / PERSONAL INFO
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold">
+            ABOUT <span class="text-gradient">ME</span>
+          </h2>
+          <div class="w-16 h-1 mx-auto rounded-full" style="background: var(--gradient-accent)"></div>
+        </div>
+       
+        <!-- Personal Info Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+          <div class="glass-panel p-5 rounded-2xl border flex items-center gap-4 hover:-translate-y-1 transition-transform">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background: var(--color-card-border); color: var(--color-primary)">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <div>
+              <span class="text-xs text-brand-muted block font-medium">EDUCATION</span>
+              <span class="text-sm font-bold">Computer Science</span>
+            </div>
+          </div>
+
+          <div class="glass-panel p-5 rounded-2xl border flex items-center gap-4 hover:-translate-y-1 transition-transform">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background: var(--color-card-border); color: var(--color-primary)">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <span class="text-xs text-brand-muted block font-medium">LOCATION</span>
+              <span class="text-sm font-bold">Buriram, Thailand</span>
+            </div>
+          </div>
+
+          <div class="glass-panel p-5 rounded-2xl border flex items-center gap-4 hover:-translate-y-1 transition-transform">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background: var(--color-card-border); color: var(--color-primary)">
+              <i class="fa-solid fa-language"></i>
+            </div>
+            <div>
+              <span class="text-xs text-brand-muted block font-medium">LANGUAGES</span>
+              <span class="text-sm font-bold">Thai (Native), English</span>
+            </div>
+          </div>
+
+          <div class="glass-panel p-5 rounded-2xl border flex items-center gap-4 hover:-translate-y-1 transition-transform">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background: var(--color-card-border); color: var(--color-primary)">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <div>
+              <span class="text-xs text-brand-muted block font-medium">STATUS</span>
+              <span class="text-sm font-bold text-emerald-400">Available to start</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Tech Stack Section -->
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <!-- Section Header -->
+        <div class="text-center space-y-3">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider glass-panel border" style="color: var(--color-primary)">
+            ทักษะความสามารถ / MY SKILLS
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold">
+            TECHNICAL <span class="text-gradient">SKILL</span>
+          </h2>
+          <div class="w-16 h-1 mx-auto rounded-full" style="background: var(--gradient-accent)"></div>
+        </div>
+
+        <!-- Skills Grid Container -->
+        <div id="skillsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          
+          <!-- React / Next.js -->
+          <div class="skill-card glass-panel p-6 rounded-2xl border">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <i class="fa-brands fa-react text-3xl text-cyan-400"></i>
+                <span class="font-bold text-lg">React / Front-End</span>
+              </div>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-md glass-panel" style="color: var(--color-primary)">90%</span>
+            </div>
+            <p class="text-xs text-brand-muted mb-3">HTML5, CSS3, JavaScript, React, Tailwind CSS</p>
+            <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+              <div class="h-full rounded-full transition-all duration-1000" style="width: 90%; background: var(--gradient-accent)"></div>
+            </div>
+          </div>
+
+          <!-- JavaScript / PHP -->
+          <div class="skill-card glass-panel p-6 rounded-2xl border">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <i class="fa-brands fa-php text-3xl text-indigo-400"></i>
+                <span class="font-bold text-lg">PHP & JavaScript</span>
+              </div>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-md glass-panel" style="color: var(--color-primary)">88%</span>
+            </div>
+            <p class="text-xs text-brand-muted mb-3">Server-side Scripting, ES6+, Web Application Architecture</p>
+            <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+              <div class="h-full rounded-full transition-all duration-1000" style="width: 88%; background: var(--gradient-accent)"></div>
+            </div>
+          </div>
+
+          <!-- MySQL & Database Management -->
+          <div class="skill-card glass-panel p-6 rounded-2xl border">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-database text-3xl text-blue-400"></i>
+                <span class="font-bold text-lg">SQL & Database</span>
+              </div>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-md glass-panel" style="color: var(--color-primary)">85%</span>
+            </div>
+            <p class="text-xs text-brand-muted mb-3">MySQL, Database Design, Query Optimization, XAMPP</p>
+            <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+              <div class="h-full rounded-full transition-all duration-1000" style="width: 85%; background: var(--gradient-accent)"></div>
+            </div>
+          </div>
+
+          <!-- UI/UX & Tools -->
+          <div class="skill-card glass-panel p-6 rounded-2xl border">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <i class="fa-brands fa-figma text-3xl text-purple-400"></i>
+                <span class="font-bold text-lg">UI/UX & Design Tools</span>
+              </div>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-md glass-panel" style="color: var(--color-primary)">82%</span>
+            </div>
+            <p class="text-xs text-brand-muted mb-3">Figma, Wireframing, Responsive Design, VS Code</p>
+            <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+              <div class="h-full rounded-full transition-all duration-1000" style="width: 82%; background: var(--gradient-accent)"></div>
+            </div>
+          </div>
+
+          <!-- Business Analysis -->
+          <div class="skill-card glass-panel p-6 rounded-2xl border">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-chart-line text-3xl text-emerald-400"></i>
+                <span class="font-bold text-lg">Business Analysis</span>
+              </div>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-md glass-panel" style="color: var(--color-primary)">85%</span>
+            </div>
+            <p class="text-xs text-brand-muted mb-3">Requirement Gathering, Documentation, Process Management</p>
+            <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+              <div class="h-full rounded-full transition-all duration-1000" style="width: 85%; background: var(--gradient-accent)"></div>
+            </div>
+          </div>
+
+
+<!-- Microsoft 365 & Office Suite -->
+<div class="skill-card glass-panel p-6 rounded-2xl border">
+  <div class="flex items-center justify-between mb-4">
+    <div class="flex items-center gap-3">
+      <i class="fa-brands fa-microsoft text-3xl text-sky-400"></i>
+      <span class="font-bold text-lg">Microsoft 365 & Office</span>
+    </div>
+    <span class="text-xs font-bold px-2.5 py-1 rounded-md glass-panel" style="color: var(--color-primary)">90%</span>
+  </div>
+  <p class="text-xs text-brand-muted mb-3">Word, Excel (Advanced Formulas), PowerPoint, Outlook, Teams</p>
+  <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+    <div class="h-full rounded-full transition-all duration-1000" style="width: 90%; background: var(--gradient-accent)"></div>
+  </div>
+</div>
+
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects Showcase Section -->
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-7xl mx-auto space-y-12">
+        
+        <!-- Section Title -->
+        <div class="text-center space-y-3">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider glass-panel border" style="color: var(--color-primary)">
+            ผลงานที่ผ่านมา / PORTFOLIO
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold">
+            MY <span class="text-gradient">PROJECTS</span>
+          </h2>
+          <div class="w-16 h-1 mx-auto rounded-full" style="background: var(--gradient-accent)"></div>
+        </div>
+
+        <!-- Projects Cards Grid -->
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+          <!-- Project Card 1: Student Assessment System -->
+          <!-- Project Card 1: Student Assessment System -->
+<div class="project-card glass-panel rounded-2xl overflow-hidden border flex flex-col group transition-all duration-300 hover:-translate-y-2" data-id="p1">
+  <div class="relative h-52 overflow-hidden bg-slate-900">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+    <div class="w-full h-full p-5 flex flex-col justify-between bg-gradient-to-br from-purple-900/60 to-slate-900 group-hover:scale-105 transition-transform duration-500">
+      <div class="flex items-center justify-between text-xs font-mono text-cyan-300">
+        <span>Student Analytics System</span>
+        <span class="px-2.5 py-0.5 rounded bg-cyan-500/20">WEB APP</span>
+      </div>
+      <div class="space-y-2">
+        <div class="h-2 w-3/4 bg-white/20 rounded"></div>
+        <div class="h-2 w-1/2 bg-white/10 rounded"></div>
+      </div>
+    </div>
+  </div>
+  <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+    <div>
+      <h3 class="text-xl font-bold group-hover:text-brand-primary transition-colors">Student Performance Assessment System</h3>
+      <p class="text-xs text-brand-muted mt-2 leading-relaxed">ระบบประเมินและวิเคราะห์ผลการเรียนนักศึกษา พัฒนาขึ้นเพื่อช่วยสรุปและจัดการข้อมูลวิชาการอย่างเป็นระบบ</p>
+    </div>
+    <div class="flex flex-wrap gap-1.5">
+      <span class="px-2.5 py-1 rounded-md text-[11px] glass-panel border">HTML</span>
+      <span class="px-2.5 py-1 rounded-md text-[11px] glass-panel border">CSS</span>
+      <span class="px-2.5 py-1 rounded-md text-[11px] glass-panel border">JavaScript</span>
+      <span class="px-2.5 py-1 rounded-md text-[11px] glass-panel border">PHP</span>
+      <span class="px-2.5 py-1 rounded-md text-[11px] glass-panel border">MySQL</span>
+    </div>
+    
+    <!-- ปุ่มควบคุม 2 ปุ่มคู่กัน -->
+    <div class="flex items-center gap-2 pt-2">
+      <a href="https://portfolio-ong-jade.vercel.app/" target="_blank" class="flex-1 py-2.5 rounded-xl font-semibold text-xs glass-panel border hover:border-brand-primary transition-all flex items-center justify-center gap-1.5">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> ดูงานดีไซน์
+      </a>
+      <a href="https://github.com/YOUR_USERNAME/student-system" target="_blank" class="flex-1 py-2.5 rounded-xl font-semibold text-xs glass-panel border hover:border-brand-primary transition-all flex items-center justify-center gap-1.5">
+        <i class="fa-brands fa-github text-sm"></i> GitHub
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Project Card 2: Moya Cafe -->
+<div class="project-card glass-panel rounded-2xl overflow-hidden border flex flex-col group transition-all duration-300 hover:-translate-y-2" data-id="p2">
+  <div class="relative h-52 overflow-hidden bg-slate-900">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+    <div class="w-full h-full p-5 flex flex-col justify-between bg-gradient-to-br from-amber-900/60 to-slate-900 group-hover:scale-105 transition-transform duration-500">
+      <div class="flex items-center justify-between text-xs font-mono text-amber-300">
+        <span>Moya Cafe Web App</span>
+        <span class="px-2.5 py-0.5 rounded bg-amber-500/20">E-COMMERCE</span>
+      </div>
+      <div class="grid grid-cols-3 gap-2">
+        <div class="h-10 bg-white/10 rounded"></div>
+        <div class="h-10 bg-white/10 rounded"></div>
+        <div class="h-10 bg-white/10 rounded"></div>
+      </div>
+    </div>
+  </div>
+  <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+    <div>
+      <h3 class="text-xl font-bold group-hover:text-brand-primary transition-colors">Moya Cafe Web Application</h3>
+      <p class="text-xs text-brand-muted mt-2 line-clamp-2 leading-relaxed">
+        ระบบเว็บแอปพลิเคชันบริหารจัดการร้านกาแฟและสั่งซื้อเครื่องดื่มออนไลน์ ออกแบบด้วยโทนสีน้ำตาล–ครีม มอบความอบอุ่นและใช้งานง่าย
+      </p>
+    </div>
+    <div class="flex flex-wrap gap-1.5">
+      <span class="px-2.5 py-1 rounded-md text-[11px] glass-panel border">HTML</span>
+      <span class="px-2.5 py-1 rounded-md text-[11px] glass-panel border">CSS</span>
+      <span class="px-2.5 py-1 rounded-md text-[11px] glass-panel border">JavaScript</span>
+      <span class="px-2.5 py-1 rounded-md text-[11px] glass-panel border">PHP</span>
+      <span class="px-2.5 py-1 rounded-md text-[11px] glass-panel border">MySQL</span>
+    </div>
+
+    <!-- ปุ่มควบคุม 2 ปุ่มคู่กัน -->
+    <div class="flex items-center gap-2 pt-2">
+      <a href="https://www.canva.com/" target="_blank" class="flex-1 py-2.5 rounded-xl font-semibold text-xs glass-panel border hover:border-brand-primary transition-all flex items-center justify-center gap-1.5">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> ดูงานดีไซน์
+      </a>
+      <a href="https://github.com/YOUR_USERNAME/moya-cafe" target="_blank" class="flex-1 py-2.5 rounded-xl font-semibold text-xs glass-panel border hover:border-brand-primary transition-all flex items-center justify-center gap-1.5">
+        <i class="fa-brands fa-github text-sm"></i> GitHub
+      </a>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-5xl mx-auto space-y-16">
+        <!-- Section Header -->
+        <div class="text-center space-y-3">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider glass-panel border" style="color: var(--color-primary)">
+            ประวัติการศึกษาและการทำงาน / TIMELINE
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold">
+            Education <span class="text-gradient">& Work</span>
+          </h2>
+          <div class="w-16 h-1 mx-auto rounded-full" style="background: var(--gradient-accent)"></div>
+        </div>
+
+        <!-- Timeline Vertical Line -->
+        <div class="relative border-l-2 border-brand-border ml-4 sm:ml-32 space-y-10">
+
+          <!-- Item 1 -->
+          <div class="relative pl-8 sm:pl-10 group">
+            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full border-2 border-brand-primary bg-black group-hover:scale-125 transition-transform"></div>
+            <div class="hidden sm:block absolute -left-32 top-1 w-24 text-right text-xs font-bold text-brand-muted">
+              2019 - 2024
+            </div>
+            <div class="glass-panel p-6 rounded-2xl border space-y-3">
+              <span class="sm:hidden inline-block text-xs font-bold px-2.5 py-1 rounded glass-panel text-brand-primary mb-1">2019 - 2024</span>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h3 class="text-lg font-bold">BURIRAM RAJABHAT UNIVERSITY</h3>
+                <span class="text-xs px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 font-semibold">Bachelor Degree</span>
+              </div>
+              <p class="text-sm font-semibold text-brand-primary">Bachelor of Science in Computer Science</p>
+              <p class="text-xs sm:text-sm text-brand-muted leading-relaxed">
+                Studied fundamental concepts of Computer Science, algorithms, database management, SQL, and software development principles. Successfully completed practical programming projects.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="relative pl-8 sm:pl-10 group">
+            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full border-2 border-brand-primary bg-black group-hover:scale-125 transition-transform"></div>
+            <div class="hidden sm:block absolute -left-32 top-1 w-24 text-right text-xs font-bold text-brand-muted">
+              Oct 2023 – Feb 2024
+            </div>
+            <div class="glass-panel p-6 rounded-2xl border space-y-3">
+              <span class="sm:hidden inline-block text-xs font-bold px-2.5 py-1 rounded glass-panel text-brand-primary mb-1">Oct 2023 – Feb 2024</span>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h3 class="text-lg font-bold">Ditruz Co., Ltd.</h3>
+                <span class="text-xs px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 font-semibold">Pathum Thani, Thailand</span>
+              </div>
+              <p class="text-sm font-semibold text-brand-primary">BUSINESS ANALYST (INTERNSHIP)</p>
+              <ul class="text-xs sm:text-sm text-brand-muted space-y-1.5 list-disc list-inside leading-relaxed">
+                <li>Prepared, organized, and managed documents and reports systematically to support daily operations.</li>
+                <li>Utilized Microsoft Office tools for data management, documentation, and administrative efficiency.</li>
+                <li>Coordinated with teams and departments to ensure accurate communication and milestone execution.</li>
+                <li>Verified data accuracy and collaborated with cross-functional teams to streamline workflows.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-5xl mx-auto space-y-12">
+        <div class="text-center space-y-3">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider glass-panel border" style="color: var(--color-primary)">
+            ช่องทางติดต่อ / GET IN TOUCH
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold">
+            CONTACT <span class="text-gradient">ME</span>
+          </h2>
+          <div class="w-16 h-1 mx-auto rounded-full" style="background: var(--gradient-accent)"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Quick Copy Email Card -->
+          <div class="glass-panel p-5 rounded-2xl border flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4 min-w-0">
+              <div class="w-12 h-12 shrink-0 rounded-xl flex items-center justify-center text-xl text-black" style="background: var(--gradient-accent)">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="truncate">
+                <span class="text-xs text-brand-muted font-medium block">อีเมลสำหรับติดต่อ</span>
+                <span id="emailText" class="text-xs sm:text-sm font-bold truncate block">supaweephux@gmail.com</span>
+              </div>
+            </div>
+            <button id="copyEmailBtn" class="p-3 rounded-xl glass-panel border hover:text-brand-primary active:scale-95 transition-all shrink-0" title="คัดลอกอีเมล">
+              <i class="fa-regular fa-copy text-lg"></i>
+            </button>
+          </div>
+
+          <!-- Quick Copy Phone Card -->
+          <div class="glass-panel p-5 rounded-2xl border flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4 min-w-0">
+              <div class="w-12 h-12 shrink-0 rounded-xl flex items-center justify-center text-xl text-black" style="background: var(--gradient-accent)">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="truncate">
+                <span class="text-xs text-brand-muted font-medium block">เบอร์โทรศัพท์</span>
+                <span id="phoneText" class="text-xs sm:text-sm font-bold truncate block">+66 90 217 1320</span>
+              </div>
+            </div>
+            <button id="copyPhoneBtn" class="p-3 rounded-xl glass-panel border hover:text-brand-primary active:scale-95 transition-all shrink-0" title="คัดลอกเบอร์โทร">
+              <i class="fa-regular fa-copy text-lg"></i>
+            </button>
+          </div>
+
+          <!-- Quick Copy Line ID -->
+          <div class="glass-panel p-5 rounded-2xl border flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4 min-w-0">
+              <div class="w-12 h-12 shrink-0 rounded-xl bg-emerald-500 text-black flex items-center justify-center text-xl font-bold">
+                <i class="fa-brands fa-line"></i>
+              </div>
+              <div class="truncate">
+                <span class="text-xs text-brand-muted font-medium block">LINE ID</span>
+                <span id="lineText" class="text-xs sm:text-sm font-bold truncate block">@supawi1</span>
+              </div>
+            </div>
+            <button id="copyLineBtn" class="p-3 rounded-xl glass-panel border hover:text-brand-primary active:scale-95 transition-all shrink-0" title="คัดลอก Line ID">
+              <i class="fa-regular fa-copy text-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="glass-nav border-t border-brand-border py-8 px-4 sm:px-6 lg:px-8 mt-20 relative z-10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-black text-sm" style="background: var(--gradient-accent)">
+          S
+        </div>
+        <span class="text-sm font-semibold">SUPAWEE.DEV &copy; 2026 All Rights Reserved.</span>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs sm:text-sm text-brand-muted">
+        <a href="#hero" class="hover:text-brand-primary transition-colors">หน้าแรก</a>
+        <a href="#about" class="hover:text-brand-primary transition-colors">เกี่ยวกับ</a>
+        <a href="#projects" class="hover:text-brand-primary transition-colors">ผลงาน</a>
+        <a href="#contact" class="hover:text-brand-primary transition-colors">ติดต่อ</a>
+      </div>
+
+      <!-- Back to top -->
+      <button id="backToTopBtn" class="p-2.5 rounded-xl glass-panel border hover:border-brand-primary hover:text-brand-primary transition-all duration-300" title="กลับขึ้นด้านบน">
+        <i class="fa-solid fa-arrow-up text-sm"></i>
+      </button>
+
+    </div>
+  </footer>
+
+  <!-- Theme Customizer Drawer Side Panel -->
+  <div id="customizerBackdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <aside id="customizerDrawer" class="fixed top-0 right-0 w-full sm:w-96 h-full glass-panel border-l border-brand-border z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-6 overflow-y-auto">
+    <div class="space-y-6">
+      
+      <!-- Drawer Header -->
+      <div class="flex items-center justify-between pb-4 border-b border-brand-border">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-palette text-xl text-gradient"></i>
+          <h3 class="font-bold text-lg">ปรับแต่งธีม (Theme Customizer)</h3>
+        </div>
+        <button id="closeCustomizerBtn" class="p-2 rounded-lg hover:bg-white/10 transition-all">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- 1. Theme Presets Palette -->
+      <div class="space-y-3">
+        <label class="text-xs font-bold uppercase tracking-wider text-brand-muted block">1. เลือกธีมสีหลัก (Color Preset)</label>
+        <div class="grid grid-cols-2 gap-2.5">
+          <button data-theme-set="cyberpunk" class="theme-card-btn p-3 rounded-xl glass-panel border text-left transition-all hover:scale-105 flex items-center gap-3">
+            <span class="w-5 h-5 rounded-full bg-gradient-to-tr from-cyan-400 to-pink-500 shadow"></span>
+            <span class="text-xs font-semibold">Cyberpunk</span>
+          </button>
+          <button data-theme-set="sunset" class="theme-card-btn p-3 rounded-xl glass-panel border text-left transition-all hover:scale-105 flex items-center gap-3">
+            <span class="w-5 h-5 rounded-full bg-gradient-to-tr from-orange-500 to-amber-400 shadow"></span>
+            <span class="text-xs font-semibold">Sunset Gold</span>
+          </button>
+          <button data-theme-set="emerald" class="theme-card-btn p-3 rounded-xl glass-panel border text-left transition-all hover:scale-105 flex items-center gap-3">
+            <span class="w-5 h-5 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-400 shadow"></span>
+            <span class="text-xs font-semibold">Emerald Mint</span>
+          </button>
+          <button data-theme-set="ocean" class="theme-card-btn p-3 rounded-xl glass-panel border text-left transition-all hover:scale-105 flex items-center gap-3">
+            <span class="w-5 h-5 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-400 shadow"></span>
+            <span class="text-xs font-semibold">Ocean Breeze</span>
+          </button>
+          <button data-theme-set="rose" class="theme-card-btn p-3 rounded-xl glass-panel border text-left transition-all hover:scale-105 flex items-center gap-3">
+            <span class="w-5 h-5 rounded-full bg-gradient-to-tr from-pink-500 to-purple-400 shadow"></span>
+            <span class="text-xs font-semibold">Rose Quartz</span>
+          </button>
+          <button data-theme-set="obsidian" class="theme-card-btn p-3 rounded-xl glass-panel border text-left transition-all hover:scale-105 flex items-center gap-3">
+            <span class="w-5 h-5 rounded-full bg-gradient-to-tr from-yellow-500 to-slate-400 shadow"></span>
+            <span class="text-xs font-semibold">Obsidian</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. Dark / Light Mode Toggle -->
+      <div class="space-y-3 pt-2">
+        <label class="text-xs font-bold uppercase tracking-wider text-brand-muted block">2. โหมดการแสดงผล (Base Mode)</label>
+        <div class="grid grid-cols-2 gap-3">
+          <button id="modeDarkBtn" class="p-3 rounded-xl glass-panel border flex items-center justify-center gap-2 text-xs font-semibold hover:border-brand-primary transition-all">
+            <i class="fa-solid fa-moon text-indigo-400"></i> Dark Mode
+          </button>
+          <button id="modeLightBtn" class="p-3 rounded-xl glass-panel border flex items-center justify-center gap-2 text-xs font-semibold hover:border-brand-primary transition-all">
+            <i class="fa-solid fa-sun text-amber-400"></i> Light Mode
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. Font Family Selector -->
+      <div class="space-y-3 pt-2">
+        <label class="text-xs font-bold uppercase tracking-wider text-brand-muted block">3. รูปแบบฟอนต์ (Typography)</label>
+        <div class="grid grid-cols-2 gap-3">
+          <button data-font-set="prompt" class="font-btn p-3 rounded-xl glass-panel border font-prompt text-xs font-semibold text-center hover:border-brand-primary transition-all">
+            Prompt (โมเดิร์น)
+          </button>
+          <button data-font-set="kanit" class="font-btn p-3 rounded-xl glass-panel border font-kanit text-xs font-semibold text-center hover:border-brand-primary transition-all">
+            Kanit (หนักแน่น)
+          </button>
+        </div>
+      </div>
+
+      <!-- 4. Ambient Effect Toggle -->
+      <div class="space-y-3 pt-2">
+        <label class="text-xs font-bold uppercase tracking-wider text-brand-muted block">4. เอฟเฟกต์พื้นหลัง (Ambient Glow)</label>
+        <button id="toggleAmbientBtn" class="w-full p-3 rounded-xl glass-panel border flex items-center justify-between text-xs font-semibold">
+          <span>แสดงวงกลมเรืองแสงลอยด้านหลัง</span>
+          <span id="ambientStatusText" class="text-emerald-400 font-bold">เปิดใช้งาน</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Reset Defaults -->
+    <div class="pt-6 border-t border-brand-border mt-6">
+      <button id="resetThemeBtn" class="w-full py-2.5 rounded-xl text-xs font-medium glass-panel border hover:border-rose-500 hover:text-rose-400 transition-all">
+        <i class="fa-solid fa-rotate-left mr-1.5"></i> รีเซ็ตเป็นค่าเริ่มต้น
+      </button>
+    </div>
+  </aside>
+
+  <!-- Project Modal Popup Container -->
+  <div id="projectModalBackdrop" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
+    <div id="projectModalCard" class="max-w-3xl w-full max-h-[90vh] glass-panel border border-brand-border rounded-3xl overflow-y-auto p-6 sm:p-8 transform scale-95 transition-all duration-300 relative space-y-6">
+      
+      <!-- Close Button -->
+      <button id="closeModalBtn" class="absolute top-6 right-6 p-2 rounded-xl glass-panel border hover:bg-white/10 transition-all z-20">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <!-- Modal Content Placeholder -->
+      <div id="modalContent"></div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Box -->
+  <div id="toast" class="fixed bottom-6 right-6 glass-panel border border-brand-primary p-4 rounded-2xl shadow-2xl z-50 flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div id="toastIcon" class="w-8 h-8 rounded-xl flex items-center justify-center text-black font-bold text-sm" style="background: var(--gradient-accent)">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <span id="toastMessage" class="text-sm font-semibold">คัดลอกลงคลิปบอร์ดแล้ว!</span>
+  </div>
+
+  <script>
+    // Detailed Project Data Dictionary for Modals
+    const projectsData = {
+      p1: {
+        title: "Student Performance Assessment System",
+        category: "Web Application & Database System",
+        demoUrl: "#",
+        githubUrl: "#",
+        description: "ระบบประเมินวิเคราะห์ผลการเรียนนักศึกษา พัฒนาขึ้นด้วยภาษา PHP และ MySQL ออกแบบมาเพื่อให้ผู้ดูแลและอาจารย์สามารถติดตามผลประเมินรายวิชา ประมวลผลคะแนน และสรุปรายงานผลการเรียนได้อย่างรวดเร็วและแม่นยำ",
+        features: [
+          "ระบบประเมินและจัดเก็บผลการเรียนอย่างเป็นหมวดหมู่",
+          "สรุปสถิติคะแนนและผลสัมฤทธิ์ทางการเรียน",
+          "จัดการฐานข้อมูลนักศึกษาและวิชาเรียนด้วย MySQL",
+          "ส่วนติดต่อผู้ใช้งาน (UI) สะอาดตา รองรับการใช้งานผ่านเว็บบราวเซอร์"
+        ],
+        stack: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "VS Code"]
+      },
+      p2: {
+        title: "Moya Cafe Web Application",
+        category: "E-Commerce & Cafe Management App",
+        demoUrl: "#",
+        githubUrl: "#",
+        description: "Moya Cafe Web Application เป็นระบบบริหารจัดการร้านกาแฟและสั่งซื้อเครื่องดื่มออนไลน์ พัฒนาด้วยภาษา PHP ร่วมกับฐานข้อมูล MySQL และจำลองเซิร์ฟเวอร์ด้วย XAMPP โดยออกแบบโทนสีน้ำตาล-ครีม ให้ความรู้สึกอบอุ่นน่าใช้งาน",
+        features: [
+          "ระบบเมนูเครื่องดื่มและเบเกอรีแยกตามหมวดหมู่",
+          "ระบบตะกร้าสินค้า สั่งซื้อสินค้า และคำนวณราคาสินค้าอัตโนมัติ",
+          "ระบบจัดการฐานข้อมูลเมนูและคำสั่งซื้อหลังบ้าน",
+          "การออกแบบที่เน้น UX/UI สะดวกต่อการใช้งานทั้งผู้ซื้อและผู้ดูแลร้าน"
+        ],
+        stack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "XAMPP"]
+      }
+    };
+
+    const typeTitles = [
+      "Full-Stack Developer 💻",
+      "UI/UX Designer 🎨",
+      "Software Developer 🚀",
+      "Business Analyst Enthusiast 📊"
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      // --- 1. Typewriter Effect Logic ---
+      const typewriterEl = document.getElementById("typewriter");
+      let titleIdx = 0;
+      let charIdx = 0;
+      let isDeleting = false;
+
+      function typeEffect() {
+        const currentText = typeTitles[titleIdx];
+        if (isDeleting) {
+          typewriterEl.textContent = currentText.substring(0, charIdx - 1);
+          charIdx--;
+        } else {
+          typewriterEl.textContent = currentText.substring(0, charIdx + 1);
+          charIdx++;
+        }
+
+        let speed = isDeleting ? 40 : 80;
+
+        if (!isDeleting && charIdx === currentText.length) {
+          speed = 2000;
+          isDeleting = true;
+        } else if (isDeleting && charIdx === 0) {
+          isDeleting = false;
+          titleIdx = (titleIdx + 1) % typeTitles.length;
+          speed = 400;
+        }
+
+        setTimeout(typeEffect, speed);
+      }
+      typeEffect();
+
+      // --- 2. Customizer Drawer & Theme Switcher ---
+      const openCustomizerBtn = document.getElementById('openCustomizerBtn');
+      const closeCustomizerBtn = document.getElementById('closeCustomizerBtn');
+      const customizerDrawer = document.getElementById('customizerDrawer');
+      const customizerBackdrop = document.getElementById('customizerBackdrop');
+      const resetThemeBtn = document.getElementById('resetThemeBtn');
+
+      function openDrawer() {
+        customizerDrawer.classList.remove('translate-x-full');
+        customizerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      }
+
+      function closeDrawer() {
+        customizerDrawer.classList.add('translate-x-full');
+        customizerBackdrop.classList.add('opacity-0', 'pointer-events-none');
+      }
+
+      openCustomizerBtn.addEventListener('click', openDrawer);
+      closeCustomizerBtn.addEventListener('click', closeDrawer);
+      customizerBackdrop.addEventListener('click', closeDrawer);
+
+      // Quick Theme Dropdown
+      const quickThemeBtn = document.getElementById('quickThemeBtn');
+      const quickThemeDropdown = document.getElementById('quickThemeDropdown');
+      const quickThemeName = document.getElementById('quickThemeName');
+
+      quickThemeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        quickThemeDropdown.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', () => {
+        quickThemeDropdown.classList.add('hidden');
+      });
+
+      function setTheme(themeName) {
+        document.documentElement.setAttribute('data-theme', themeName);
+        localStorage.setItem('portfolio_theme', themeName);
+        
+        const themeMap = {
+          cyberpunk: "Cyberpunk",
+          sunset: "Sunset Gold",
+          emerald: "Emerald Mint",
+          ocean: "Ocean Breeze",
+          rose: "Rose Quartz",
+          obsidian: "Obsidian"
+        };
+        quickThemeName.textContent = themeMap[themeName] || themeName;
+      }
+
+      document.querySelectorAll('[data-theme-set]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          setTheme(btn.getAttribute('data-theme-set'));
+        });
+      });
+
+      // Dark / Light Mode Toggle
+      const modeDarkBtn = document.getElementById('modeDarkBtn');
+      const modeLightBtn = document.getElementById('modeLightBtn');
+
+      function setMode(mode) {
+        if (mode === 'light') {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        } else {
+          document.documentElement.classList.remove('light');
+          document.documentElement.classList.add('dark');
+        }
+        localStorage.setItem('portfolio_mode', mode);
+      }
+
+      modeDarkBtn.addEventListener('click', () => setMode('dark'));
+      modeLightBtn.addEventListener('click', () => setMode('light'));
+
+      // Typography Font Switch
+      document.querySelectorAll('[data-font-set]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const font = btn.getAttribute('data-font-set');
+          document.documentElement.setAttribute('data-font', font);
+          localStorage.setItem('portfolio_font', font);
+        });
+      });
+
+      // Ambient Background Toggle
+      const toggleAmbientBtn = document.getElementById('toggleAmbientBtn');
+      const ambientStatusText = document.getElementById('ambientStatusText');
+
+      toggleAmbientBtn.addEventListener('click', () => {
+        const isHidden = document.body.classList.toggle('hide-ambient');
+        ambientStatusText.textContent = isHidden ? "ปิดใช้งาน" : "เปิดใช้งาน";
+        ambientStatusText.className = isHidden ? "text-rose-400 font-bold" : "text-emerald-400 font-bold";
+        localStorage.setItem('portfolio_ambient', isHidden ? 'off' : 'on');
+      });
+
+      // Reset Defaults
+      resetThemeBtn.addEventListener('click', () => {
+        setTheme('cyberpunk');
+        setMode('dark');
+        document.documentElement.setAttribute('data-font', 'prompt');
+        document.body.classList.remove('hide-ambient');
+        ambientStatusText.textContent = "เปิดใช้งาน";
+        ambientStatusText.className = "text-emerald-400 font-bold";
+        localStorage.clear();
+        showToast("รีเซ็ตการตั้งค่าเรียบร้อยแล้ว");
+      });
+
+      // Restore Saved Settings
+      const savedTheme = localStorage.getItem('portfolio_theme') || 'cyberpunk';
+      const savedMode = localStorage.getItem('portfolio_mode') || 'dark';
+      const savedFont = localStorage.getItem('portfolio_font') || 'prompt';
+      const savedAmbient = localStorage.getItem('portfolio_ambient') || 'on';
+
+      setTheme(savedTheme);
+      setMode(savedMode);
+      document.documentElement.setAttribute('data-font', savedFont);
+      if (savedAmbient === 'off') {
+        document.body.classList.add('hide-ambient');
+        ambientStatusText.textContent = "ปิดใช้งาน";
+        ambientStatusText.className = "text-rose-400 font-bold";
+      }
+
+      // --- 3. Mobile Navigation Drawer ---
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+
+      mobileMenuBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        mobileMenuIcon.className = isHidden ? "fa-solid fa-bars text-xl" : "fa-solid fa-xmark text-xl";
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mobileMenuIcon.className = "fa-solid fa-bars text-xl";
+        });
+      });
+
+      // --- 4. Back to Top Button ---
+      const backToTopBtn = document.getElementById('backToTopBtn');
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // --- 5. Project Detail Modal Popup ---
+      const projectModalBackdrop = document.getElementById('projectModalBackdrop');
+      const projectModalCard = document.getElementById('projectModalCard');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const modalContent = document.getElementById('modalContent');
+
+      function openProjectModal(projectId) {
+        const data = projectsData[projectId];
+        if (!data) return;
+
+        modalContent.innerHTML = `
+        const projectsData = [
+  {
+    id: "student-system",
+    category: "WEB APP",
+    title: "Student Performance Assessment System",
+    description: "ระบบประเมินและวิเคราะห์ผลการเรียนนักศึกษา พัฒนาขึ้นเพื่อช่วยสรุปและจัดการข้อมูลวิชาการอย่างเป็นระบบ",
+    features: [
+      "ระบบคำนวณและประเมินผลการเรียน",
+      "สรุปข้อมูลวิชาการอย่างเป็นระบบ"
+    ],
+    stack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+    demoUrl: "https://portfolio-ong-jade.vercel.app/", // 🔗 ลิงก์ที่ 1
+    githubUrl: "https://github.com/..."
+  },
+  {
+    id: "moya-cafe",
+    category: "E-COMMERCE",
+    title: "Moya Cafe Web Application",
+    description: "ระบบเว็บแอปพลิเคชันบริหารจัดการร้านกาแฟและสั่งซื้อเครื่องดื่มออนไลน์ ออกแบบด้วยโทนสีน้ำตาล–ครีม มอบความอบอุ่นและใช้งานง่าย",
+    features: [
+      "ระบบสั่งซื้อเครื่องดื่มออนไลน์",
+      "ระบบบริหารจัดการร้านกาแฟ"
+    ],
+    stack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+    demoUrl: "https://www.canva.com/", // 🔗 ลิงก์ที่ 2
+    githubUrl: "https://github.com/..."
+  }
+];
+        `;
+
+        projectModalBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+        projectModalCard.classList.remove('scale-95');
+        projectModalCard.classList.add('scale-100');
+      }
+
+      function closeModal() {
+        projectModalBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        projectModalCard.classList.remove('scale-100');
+        projectModalCard.classList.add('scale-95');
+      }
+
+      document.querySelectorAll('.open-modal-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const card = e.target.closest('.project-card');
+          const id = card.getAttribute('data-id');
+          openProjectModal(id);
+        });
+      });
+
+      closeModalBtn.addEventListener('click', closeModal);
+      projectModalBackdrop.addEventListener('click', (e) => {
+        if (e.target === projectModalBackdrop) closeModal();
+      });
+
+      // --- 6. Toast & Copy to Clipboard ---
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toastMessage');
+
+      function showToast(msg) {
+        toastMessage.textContent = msg;
+        toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+        setTimeout(() => {
+          toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+        }, 3000);
+      }
+
+      function copyToClipboard(text, label) {
+        if (!text) return;
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(`คัดลอก ${label} เรียบร้อยแล้ว!`);
+        }).catch(() => {
+          const tempInput = document.createElement('input');
+          tempInput.value = text;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+          showToast(`คัดลอก ${label} เรียบร้อยแล้ว!`);
+        });
+      }
+
+      // Bind Copy Buttons
+      const copyEmailBtn = document.getElementById('copyEmailBtn');
+      const copyPhoneBtn = document.getElementById('copyPhoneBtn');
+      const copyLineBtn = document.getElementById('copyLineBtn');
+
+      if (copyEmailBtn) {
+        copyEmailBtn.addEventListener('click', () => {
+          copyToClipboard(document.getElementById('emailText').textContent.trim(), 'อีเมล');
+        });
+      }
+      if (copyPhoneBtn) {
+        copyPhoneBtn.addEventListener('click', () => {
+          copyToClipboard(document.getElementById('phoneText').textContent.trim(), 'เบอร์โทรศัพท์');
+        });
+      }
+      if (copyLineBtn) {
+        copyLineBtn.addEventListener('click', () => {
+          copyToClipboard(document.getElementById('lineText').textContent.trim(), 'LINE ID');
+        });
+      }
+
+    });
+  </script>
+</body>
+</html>
